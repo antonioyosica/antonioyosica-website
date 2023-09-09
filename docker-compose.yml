@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  antonioyosica-website:
+    container_name: antonioyosica-website
+    restart: unless-stopped
+    build:
+      context: ./
+      dockerfile: ./config/Dockerfile
+    image: antonioyosica/website:v0
+    ports:
+      - 3000:3000
