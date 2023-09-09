@@ -7,7 +7,8 @@ WORKDIR /usr/src/antonioyosica-website
 
 # copy the app, note .dockerignore
 COPY src /usr/src/antonioyosica-website
-RUN yarn install && yarn build --standalone
+RUN yarn install
+RUN yarn build --standalone
 
 EXPOSE 3000
 
