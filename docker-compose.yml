@@ -9,3 +9,8 @@ services:
     image: antonioyosica/website:v0
     ports:
       - 3000:3000
+    networks:
+      - nginx-proxymanager_default
+networks:
+  nginx-proxymanager_default:
+    external: true
