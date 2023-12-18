@@ -6,7 +6,7 @@ services:
     build:
       context: ./
       dockerfile: ./config/Dockerfile
-    image: antonioyosica/website:v0
+    image: antonioyosica/website:latest
     ports:
       - 3000:3000
     networks:

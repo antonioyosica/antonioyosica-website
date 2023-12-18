@@ -1,12 +1,18 @@
-import { resolve } from "path";
-
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-  alias: {
-    "@": resolve(__dirname, "/"),
+  vite: {
+    server: {
+      hmr: {
+        clientPort: 3000,
+        port: 3000
+      }
+    }
   },
-  css: [
-    "~/assets/css/main.css"
-  ],
-  modules: ["@nuxt/content",],
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+    }
+  },
+  // css: ['~/assets/css/main.css']
 })
