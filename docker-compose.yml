@@ -8,9 +8,4 @@ services:
       dockerfile: ./config/Dockerfile
     image: antonioyosica/website:latest
     ports:
-      - 3000:3000
-    networks:
-      - nginx-proxymanager_default
-networks:
-  nginx-proxymanager_default:
-    external: true
+      - 7000:3000

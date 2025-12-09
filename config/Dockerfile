@@ -1,18 +1,28 @@
-# Dockerfile
-FROM node:18.18.1-alpine3.18
+FROM node:22-alpine AS deps
+RUN corepack enable
+WORKDIR /app
+COPY src/package.json src/pnpm-lock.yaml* ./
+RUN pnpm install --frozen-lockfile
 
-# create destination directory
-RUN mkdir -p /usr/src/antonioyosica-website
-WORKDIR /usr/src/antonioyosica-website
+FROM node:22-alpine AS builder
+RUN corepack enable
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY src ./
+ENV NODE_ENV=production
+RUN pnpm run build
 
-# copy the app, note .dockerignore
-COPY src /usr/src/antonioyosica-website
-RUN npm install
-RUN npm run build
+FROM node:22-alpine AS runner
+RUN apk add --no-cache nginx curl bash
+RUN corepack enable
+WORKDIR /app
+ENV NODE_ENV=production
+ENV NEXT_PORT=3000
 
-EXPOSE 3000
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/next.config.mjs ./next.config.mjs
 
-ENV NUXT_HOST=0.0.0.0
-ENV NUXT_PORT=3000
-
-CMD [ "npm", "run", "start" ]
+CMD ["pnpm start"]
