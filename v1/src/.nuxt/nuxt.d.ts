@@ -1,6 +1,6 @@
-/// <reference types="@vueuse/nuxt" />
 /// <reference types="@nuxtjs/tailwindcss" />
 /// <reference types="@nuxtjs/color-mode" />
+/// <reference types="@vueuse/nuxt" />
 /// <reference types="@nuxt/icon" />
 /// <reference types="@nuxt/image" />
 /// <reference types="@nuxt/fonts" />
