@@ -1,0 +1,11 @@
+.demo{position:fixed;top:calc(4.7rem + env(safe-area-inset-top,0));left:50%;transform:translateX(-50%);z-index:19;background:var(--o);color:#1a0d04;font-size:.8rem;font-weight:700;padding:.25rem .9rem;border-radius:99px;white-space:nowrap}
+.lj{list-style:none;padding:0;margin-top:2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:1rem}
+.pt{display:grid;gap:.4rem;align-content:end;text-decoration:none;border-radius:1rem;padding:1.4rem;min-height:20rem;position:relative;overflow:hidden;transition:transform .4s}.lj .pt:hover{transform:translateY(-4px)}
+.pt .ymark{position:absolute;top:1.4rem;right:1.4rem;width:34%;opacity:.35}.pt h2{font-size:clamp(1.4rem,2.2vw,1.9rem)}.pt b{font-size:1.2rem}
+.tg{background:var(--g);color:var(--c);border:2px solid var(--c)}.tc{background:var(--c);color:var(--g);border:2px solid var(--g)}.to{background:var(--o);color:#1a0d04;border:2px solid #1a0d04}
+.pd .pg{display:grid;gap:2rem;margin-top:1.5rem}@media(min-width:800px){.pd .pg{grid-template-columns:1fr 1fr;align-items:start}}.big-t{min-height:28rem}.big-t .ymark{width:45%;opacity:.5;top:50%;right:50%;transform:translate(50%,-50%)}
+.pr{font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:700;letter-spacing:-.03em;margin:1.2rem 0}
+.rd article{max-width:40rem;margin:2.5rem 0}.rd article p{line-height:1.75;margin-block:1.2em}.rd article h3{font-size:1.8em;color:var(--o);margin-top:2.2em}.rd .sh select{font:inherit;color:inherit;background:transparent;border:2px solid currentColor;border-radius:99px;padding:.5rem 1rem}.sh button:disabled{opacity:.3;cursor:default}
+.cr{display:grid;grid-template-columns:1fr auto auto;gap:1rem;align-items:center}.qt{min-width:1.5rem;text-align:center;font-weight:700}
+.co{display:grid;gap:3rem;margin-top:2rem}@media(min-width:900px){.co{grid-template-columns:1.3fr 1fr}}.co fieldset{border:2px solid currentColor;border-radius:.7rem;padding:1rem}.rd2{display:flex!important;grid-template-columns:none!important;gap:.6rem;align-items:center;opacity:.5}.rd2 input{width:auto}
+@media(max-width:760px){.demo{top:auto;bottom:calc(1rem + env(safe-area-inset-bottom,0));left:1rem;transform:none}.cr{grid-template-columns:1fr}}
